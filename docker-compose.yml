@@ -12,16 +12,7 @@ services:
       - ./app/.env.dev
     depends_on:
       - movies-db
-      - movies-test-db
   movies-db:
-    image: postgres:13-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_USER=movies
-      - POSTGRES_PASSWORD=movies
-      - POSTGRES_DB=movies_dev
-  movies-test-db:
     image: postgres:13-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
